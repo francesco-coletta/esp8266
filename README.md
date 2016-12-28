@@ -1,2 +1,7 @@
-# esp8266
-esp8266 Test
+# Virtual machine for esp8266 dev
+
+Install [vagrant](https://www.vagrantup.com/)
+
+
+
+
