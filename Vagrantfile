@@ -95,6 +95,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       vb.customize ['modifyvm', :id, '--clipboard', 'bidirectional'] 
       vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
       vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
+      vb.customize ["modifyvm", :id, "--usb", "on"]
+      #vb.customize ["modifyvm", :id, "--usbehci", "on"]
       vb.name = "esp8266"
       vb.memory = 4096
       vb.gui = true
@@ -120,37 +122,47 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision "shell", inline: <<-SHELL
     echo " "
     echo "==================================================="
-    echo "PROVISIONING 1/4: GENERAL"
+    echo "PROVISIONING 1/5: GENERAL"
     echo "==================================================="
   SHELL
-  config.vm.provision "shell", path: "./provision/provision_general.sh"
+  #config.vm.provision "shell", path: "./provision/provision_general.sh"
   
   # 2
   config.vm.provision "shell", inline: <<-SHELL
     echo " "  
     echo "==================================================="
-    echo "= PROVISIONING 2/4: Desktop Manager XFCE4"
+    echo "= PROVISIONING 2/5: Desktop Manager XFCE4"
     echo "==================================================="
   SHELL
-  config.vm.provision "shell", path: "./provision/provision_desktopManager.sh"  
+  #config.vm.provision "shell", path: "./provision/provision_desktopManager.sh"  
   
   # 3
   config.vm.provision "shell", inline: <<-SHELL
     echo " "  
     echo "==================================================="
-    echo "= PROVISIONING 3/4: Shel zsh"
+    echo "= PROVISIONING 3/5: Shel zsh"
     echo "==================================================="
   SHELL
-  config.vm.provision "shell", path: "./provision/provision_zsh.sh"
+  #config.vm.provision "shell", path: "./provision/provision_zsh.sh"
 
   # 4
   config.vm.provision "shell", inline: <<-SHELL
     echo " "  
     echo "==================================================="
-    echo "= PROVISIONING 4/4: Development (Vim, Eclipse, Java)"
+    echo "= PROVISIONING 4/5: Development (Vim, Eclipse, Java)"
     echo "==================================================="
   SHELL
-  config.vm.provision "shell", path: "./provision/provision_java.sh"
-  config.vm.provision "shell", path: "./provision/provision_dev.sh"  
+  #config.vm.provision "shell", path: "./provision/provision_java.sh"
+  #config.vm.provision "shell", path: "./provision/provision_dev.sh" 
+
+  # 5
+  config.vm.provision "shell", inline: <<-SHELL
+    echo " "  
+    echo "==================================================="
+    echo "= PROVISIONING 5/5: ESP8266 Environment Development (Toolchain, RTOS SDK, IOT PLATFORM)"
+    echo "==================================================="
+  SHELL
+  config.vm.provision "shell", path: "./provision/provision_esp8266.sh"
+  
 
 end

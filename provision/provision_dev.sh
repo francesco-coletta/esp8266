@@ -15,6 +15,11 @@ echo ">>>> Installing editors VIM ..."
 sudo apt-get install -y -q vim
 echo -e "done\n"
 
+echo ">>>> Installing editors gedit ..."
+sudo apt-get install -y -q gedit
+echo -e "done\n"
+
+
 echo ">>>> Installing editors Eclipse CDT ..."
 sudo wget -O /opt/eclipse-cpp-neon-2-linux-gtk-x86_64.tar.gz --progress=bar:force:noscroll --show-progress --quiet http://ftp.fau.de/eclipse/technology/epp/downloads/release/neon/2/eclipse-cpp-neon-2-linux-gtk-x86_64.tar.gz
 

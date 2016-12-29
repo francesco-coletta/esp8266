@@ -1,0 +1,9 @@
+#-vagrant@esp8266 ~  
+#-#  
+
+
+
+
+
+
+/home/vagrant/esp8266/esp-open-sdk/xtensa-lx106-elf/bin/

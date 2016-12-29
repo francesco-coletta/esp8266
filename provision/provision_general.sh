@@ -46,6 +46,16 @@ sudo echo "LC_ALL=en_US.UTF-8" >> /etc/environment
 sudo echo "LC_CTYPE=en_US.UTF-8" >> /etc/environment
 echo -e "done\n"
 
+# fonts-inconsolata
+echo ">>>> Installing fonts-inconsolata ..."
+sudo apt-get install -y -q fonts-inconsolata
+echo -e "done\n"
+
+# Terminator
+echo ">>>> Installing terminator ..."
+sudo apt-get install -y -q terminator
+echo -e "done\n"
+
 # Version control 
 echo ">>>> Installing version control tools ..."
 sudo apt-get install -y -q git git-review
